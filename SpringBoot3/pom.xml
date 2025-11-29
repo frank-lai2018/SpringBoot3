@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.frank.springboot3</groupId>
+	<artifactId>SpringBoot3</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!--配置參考 https://docs.spring.io/spring-boot/tutorial/first-application/index.html-->
+	<!-- 所有Springboot項目都必須繼承自spring-boot-starter-parent-->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.6</version>
+	</parent>
+
+	<!-- WEB開發的場景啟動器-->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
+
+
+	<!--Springboot應用打包插件-->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
