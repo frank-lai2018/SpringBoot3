@@ -43,7 +43,12 @@
 		  <artifactId>jackson-dataformat-yaml</artifactId>
 		</dependency>
 		        
-        
+        			<!--自訂義starter-->
+		<dependency>
+			<groupId>com.frank</groupId>
+			<artifactId>SpringBoot3-robot-starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
