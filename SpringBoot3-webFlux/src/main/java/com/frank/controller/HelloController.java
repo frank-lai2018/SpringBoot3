@@ -7,6 +7,7 @@ import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.result.view.Rendering;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -19,6 +20,9 @@ public class HelloController {
 	public String hello(@RequestParam(value = "name", required = false, defaultValue = "no key") String name) {
 		return "Hello WebFlux! name=" + name;
 	}
+	
+	
+
 
 	// 現在推薦的方式
 	// 1、回傳單一資料Mono： Mono<Order>、User、String、Map
@@ -26,7 +30,7 @@ public class HelloController {
 	// 3、配合Flux，完成SSE： Server Send Event；服務端事件推播
 
 	@GetMapping("/haha")
-	public Flux<String> haha​​() {
+	public Mono<String> haha​​() {
 
 		// ResponseEntity.status(305)
 		// .header("aaa","bbb")
@@ -34,8 +38,8 @@ public class HelloController {
 		// .body("aaaa")
 		// .
 
-//		return Mono.just(0).map(i -> 10 / i).map(i -> "哈哈-" + i);
-		return Flux.just("哈哈1", "哈哈2", "哈哈3");
+		return Mono.just(0).map(i -> 10 / i).map(i -> "哈哈-" + i);
+//		return Flux.just("哈哈1", "哈哈2", "哈哈3");
 	}
 
 	// text/event-stream
