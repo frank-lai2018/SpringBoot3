@@ -1,0 +1,29 @@
+package com.frank.controller;
+
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+@RestController
+public class HelloController {
+
+
+    @PreAuthorize("hasRole('admin')")
+    @GetMapping("/hello")
+    public Mono<String> hello(){
+
+        return Mono.just("hello world!");
+    }
+
+
+ // 角色 haha​​： ROLE_haha：角色
+    // 沒有ROLE 字首是權限
+
+    //複雜的SpEL表達式
+    @PreAuthorize("hasRole('delete')")
+    @GetMapping("/world")
+    public Mono<String> world(){
+        return Mono.just("world!!!");
+    }
+}
